@@ -4,23 +4,22 @@ using UnityEngine;
 
 public class Moviment : MonoBehaviour
 {
-    
+    private Rigidbody2D rb;
+    public float speed = 5f;
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
-    }
-
-    void FixedUpdate(){
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        Rigidbody2D r = GetComponent<Rigidbody2D>();
-        r.velocity = new Vector3(h, v, 0) * 5;
+        if (rb != null)
+        {
+            rb.velocity = new Vector2(h, v) * speed;
+        }
     }
 }

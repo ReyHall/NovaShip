@@ -6,31 +6,32 @@ public class LeaveScreen : MonoBehaviour
 {
     private Camera mainCamera;
     private Vector2 screenBounds;
-    private float objectWidth;
-    private float objectHeight;
+    private Vector2 objectSize;
 
     void Start()
     {
         mainCamera = Camera.main;
         screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        
         if (renderer != null)
-        {
-            objectWidth = renderer.bounds.extents.x;
-            objectHeight = renderer.bounds.extents.y;
-        }
+            objectSize = renderer.bounds.extents;
     }
 
     void LateUpdate()
     {
         Vector3 position = transform.position;
-        float minX = mainCamera.transform.position.x - screenBounds.x + objectWidth;
-        float maxX = mainCamera.transform.position.x + screenBounds.x - objectWidth;
-        float minY = mainCamera.transform.position.y - screenBounds.y + objectHeight;
-        float maxY = mainCamera.transform.position.y + screenBounds.y - objectHeight;
+        Vector3 camPos = mainCamera.transform.position;
         
-        position.x = Mathf.Clamp(position.x, minX, maxX);
-        position.y = Mathf.Clamp(position.y, minY, maxY);
-        transform.position = position;
+        float minX = camPos.x - screenBounds.x + objectSize.x;
+        float maxX = camPos.x + screenBounds.x - objectSize.x;
+        float minY = camPos.y - screenBounds.y + objectSize.y;
+        float maxY = camPos.y + screenBounds.y - objectSize.y;
+        
+        transform.position = new Vector3(
+            Mathf.Clamp(position.x, minX, maxX),
+            Mathf.Clamp(position.y, minY, maxY),
+            position.z
+        );
     }
 }
