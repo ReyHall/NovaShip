@@ -7,7 +7,7 @@ public class Shot : MonoBehaviour
     public GameObject shotPrefab;
     public float fireRate = 0.2f;
     private float nextFire = 0f;
-    private readonly Vector3 shotOffset = new Vector3(0.5f, 0.5f, 0);
+    private readonly Vector3 shotOffset = new Vector3(0.25f, 0.25f, 0);
 
     void Update()
     {

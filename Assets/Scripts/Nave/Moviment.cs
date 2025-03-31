@@ -14,6 +14,11 @@ public class Moviment : MonoBehaviour
 
     void FixedUpdate()
     {
+        MovimentShip();
+    }
+
+    private void MovimentShip()
+    {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
