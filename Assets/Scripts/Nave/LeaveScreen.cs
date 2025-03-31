@@ -14,11 +14,15 @@ public class LeaveScreen : MonoBehaviour
         screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         
-        if (renderer != null)
-            objectSize = renderer.bounds.extents;
+        if (renderer != null) objectSize = renderer.bounds.extents;
     }
 
     void LateUpdate()
+    {
+        PositionCam();
+    }
+
+    private void PositionCam()
     {
         Vector3 position = transform.position;
         Vector3 camPos = mainCamera.transform.position;
