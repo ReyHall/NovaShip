@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 434096123}
   - component: {fileID: 434096122}
   - component: {fileID: 434096121}
+  - component: {fileID: 434096125}
   m_Layer: 0
   m_Name: NebulaBlue
   m_TagString: Untagged
@@ -238,6 +239,7 @@ MonoBehaviour:
   velocity: 0.4
   moveHorizontal: 0
   invertY: 0
+  colorChanger: {fileID: 434096125}
 --- !u!64 &434096122
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -310,6 +312,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434096119}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &434096125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434096119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d4a6d463d0ed441793d2bdb1a2c6e8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorChangeSpeed: 0.5
+  transparency: 0.5
+  randomColor: 1
+  fixedColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,6 +875,7 @@ MonoBehaviour:
   velocity: 0.2
   moveHorizontal: 0
   invertY: 0
+  colorChanger: {fileID: 0}
 --- !u!64 &1887009917
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -942,6 +961,7 @@ GameObject:
   - component: {fileID: 2109357877}
   - component: {fileID: 2109357876}
   - component: {fileID: 2109357879}
+  - component: {fileID: 2109357880}
   m_Layer: 0
   m_Name: NebulaAq
   m_TagString: Untagged
@@ -1051,6 +1071,23 @@ MonoBehaviour:
   velocity: 0.4
   moveHorizontal: 0
   invertY: 0
+  colorChanger: {fileID: 2109357880}
+--- !u!114 &2109357880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109357874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d4a6d463d0ed441793d2bdb1a2c6e8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorChangeSpeed: 1
+  transparency: 0.5
+  randomColor: 1
+  fixedColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
