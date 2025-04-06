@@ -3,24 +3,29 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] public int hp = 5;
-    [SerializeField] public ParticleSystem particleEffect;
+    [SerializeField] private int hp = 5;
+    [SerializeField] private ParticleSystem particleEffect;
     private SpriteRenderer spriteRenderer;
     private FlashColorEffect flashEffect;
     private int maxHp;
+    public int CurrentHP => hp;
+    public int MaxHP => maxHp;
 
-    private void Start()
+    private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         flashEffect = GetComponent<FlashColorEffect>();
         maxHp = hp;
     }
 
+
     public void TakeDamage(int damage)
     {
         hp -= damage;
+        hp = Mathf.Max(0, hp);
+
         if (flashEffect != null) flashEffect.Flash();
-        if (hp <= 0) Die();
+        if (hp <= 0)Die();
     }
 
     private void Die()

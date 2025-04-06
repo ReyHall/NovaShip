@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -8902078958263151241}
   - component: {fileID: 8276700337129164490}
   m_Layer: 0
-  m_Name: AAAIMINIGO
+  m_Name: Alien
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,8 +206,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08334b00531bc424a9b7434f2ae24288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashColor: {r: 0, g: 0.09452677, b: 1, a: 1}
   flashDuration: 0.1
+  highHpColor: {r: 0, g: 1, b: 1, a: 1}
+  lowHpColor: {r: 1, g: 0, b: 0, a: 1}
+  enemyHealth: {fileID: 0}
 --- !u!114 &8276700337129164490
 MonoBehaviour:
   m_ObjectHideFlags: 0
