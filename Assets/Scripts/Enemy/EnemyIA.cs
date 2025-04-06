@@ -58,7 +58,6 @@ public class EnemyAI : MonoBehaviour
         Vector3 direction = (playerTransform.position - transform.position).normalized;
         Vector3 nextPosition = transform.position + direction * speed * Time.deltaTime;
 
-        // Impede que o inimigo saia da tela
         if (IsWithinBounds(nextPosition))
         {
             transform.position = nextPosition;
@@ -70,7 +69,6 @@ public class EnemyAI : MonoBehaviour
         Vector3 direction = (transform.position - playerTransform.position).normalized;
         Vector3 nextPosition = transform.position + direction * (speed * 0.75f) * Time.deltaTime;
 
-        // Impede que o inimigo saia da tela
         if (IsWithinBounds(nextPosition))
         {
             transform.position = nextPosition;
@@ -120,8 +118,7 @@ public class EnemyAI : MonoBehaviour
             while (elapsedTime < moveTime)
             {
                 Vector3 nextPosition = Vector3.Lerp(startPosition, targetPosition, elapsedTime / moveTime);
-                
-                // Impede que o inimigo saia da tela
+
                 if (IsWithinBounds(nextPosition))
                 {
                     transform.position = nextPosition;

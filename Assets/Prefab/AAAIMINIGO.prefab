@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: -2362457862840219307}
   - component: {fileID: 7903936188770063166}
   - component: {fileID: -5582497352877162816}
+  - component: {fileID: -8902078958263151241}
+  - component: {fileID: 8276700337129164490}
   m_Layer: 0
   m_Name: AAAIMINIGO
   m_TagString: Enemy
@@ -192,6 +194,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69105794b4e5840f18d589c13a7d903b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8902078958263151241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772905963452936322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08334b00531bc424a9b7434f2ae24288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColor: {r: 0, g: 0.09452677, b: 1, a: 1}
+  flashDuration: 0.1
+--- !u!114 &8276700337129164490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772905963452936322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c81a2b0fc03194b7f90bd09e9e57815a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   hp: 5
-  spriteRenderer: {fileID: 0}
-  explosionEffect: {fileID: 3348691580226734691, guid: 3777de01e077540a094c3a067ff0f2ea, type: 3}
+  particleEffect: {fileID: 238076574339355130, guid: 3777de01e077540a094c3a067ff0f2ea, type: 3}
