@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -5582497352877162816}
   - component: {fileID: -8902078958263151241}
   - component: {fileID: 8276700337129164490}
+  - component: {fileID: 7074281473541203773}
   m_Layer: 0
   m_Name: Alien
   m_TagString: Enemy
@@ -224,3 +225,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 5
   particleEffect: {fileID: 238076574339355130, guid: 3777de01e077540a094c3a067ff0f2ea, type: 3}
+--- !u!114 &7074281473541203773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772905963452936322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c417034077948f0be51b4b3904be49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.3
+  magnitude: 0.1
