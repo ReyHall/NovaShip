@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class CreateEnemy : MonoBehaviour
+public class SpawnerEnemy : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemys;
     [SerializeField] private float tempo = 2f;
