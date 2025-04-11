@@ -839,6 +839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemys:
   - {fileID: 772905963452936322, guid: ee7cea0eb08a242d092df8ddfbc494e0, type: 3}
+  - {fileID: 879316561745674176, guid: 18a220031e6474c8daea593315c5443f, type: 3}
   tempo: 2
 --- !u!1 &1887009914
 GameObject:
