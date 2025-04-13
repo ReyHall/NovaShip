@@ -253,9 +253,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpPrefabs:
-  - {fileID: 6870548079611317950, guid: 7c39faa5cf4b645cbbfc0c4a83189cd3, type: 3}
-  - {fileID: 2735079073797821320, guid: 0e5d5b94be7b64147aa7e4fcf6dca9e9, type: 3}
-  - {fileID: 3997253542623546602, guid: 1d015ab7f80b94926921f3503ec2d97b, type: 3}
+  - {fileID: 6585461070973294907, guid: 339da294e6816459fba053ccef793e24, type: 3}
+  - {fileID: 2861850488615480830, guid: cfb95f91530fc443f82b8aebf86af4d8, type: 3}
+  - {fileID: 5444625279099105546, guid: 5d72af9253fe14b9ca6feba0c5e9b308, type: 3}
   dropChance: 23
   maxChance: 50
   chanceIncrement: 1.5
