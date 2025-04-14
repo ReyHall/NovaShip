@@ -109,14 +109,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4152246832467195836}
   - component: {fileID: 3369066402508257528}
-  - component: {fileID: -2868404718032126968}
   - component: {fileID: 1703838922790516494}
   - component: {fileID: 1007930124604403806}
   - component: {fileID: 8262048800291217271}
   - component: {fileID: 2051683458147493071}
   - component: {fileID: -8472037646539422162}
-  - component: {fileID: -7654273652957937976}
   - component: {fileID: 3476365730869883618}
+  - component: {fileID: 5904587868838158044}
   m_Layer: 0
   m_Name: Shield
   m_TagString: PowerUp
@@ -192,19 +191,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2868404718032126968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5444625279099105546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eedce091d4cc4c938b2623a7d46756f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerUpID: Shield
 --- !u!50 &1703838922790516494
 Rigidbody2D:
   serializedVersion: 4
@@ -322,22 +308,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpID: Shield
---- !u!114 &-7654273652957937976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5444625279099105546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93ed64eb50fd84e8e862d234a2446090, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerUpOptions:
-  - {fileID: 5444625279099105546}
-  - {fileID: 2861850488615480830, guid: cfb95f91530fc443f82b8aebf86af4d8, type: 3}
-  - {fileID: 6585461070973294907, guid: 339da294e6816459fba053ccef793e24, type: 3}
 --- !u!114 &3476365730869883618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,3 +320,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d220c89dee9c04b8ca00b3238f6ce47c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUp: {fileID: 0}
+--- !u!114 &5904587868838158044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5444625279099105546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fddfe4420c9fe47f8a452ed3f43aa3dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpOptions:
+  - {fileID: 5444625279099105546}
+  - {fileID: 6585461070973294907, guid: 339da294e6816459fba053ccef793e24, type: 3}
+  - {fileID: 2861850488615480830, guid: cfb95f91530fc443f82b8aebf86af4d8, type: 3}
