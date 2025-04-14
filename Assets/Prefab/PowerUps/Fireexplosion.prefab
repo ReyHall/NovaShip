@@ -114,10 +114,10 @@ GameObject:
   - component: {fileID: -4584007216011864523}
   - component: {fileID: -7466991993451303961}
   - component: {fileID: 8955005974549914876}
-  - component: {fileID: 5682353411276096207}
   - component: {fileID: 5961952033268093848}
+  - component: {fileID: 6208538251896710686}
   m_Layer: 0
-  m_Name: FireExplosion
+  m_Name: Fireexplosion
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -308,22 +308,6 @@ MonoBehaviour:
   scaleSpeed: 0.3
   minScale: 0.6
   maxScale: 1
---- !u!114 &5682353411276096207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6585461070973294907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93ed64eb50fd84e8e862d234a2446090, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerUpOptions:
-  - {fileID: 5444625279099105546, guid: 5d72af9253fe14b9ca6feba0c5e9b308, type: 3}
-  - {fileID: 2861850488615480830, guid: cfb95f91530fc443f82b8aebf86af4d8, type: 3}
-  - {fileID: 6585461070973294907}
 --- !u!114 &5961952033268093848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,3 +320,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d220c89dee9c04b8ca00b3238f6ce47c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerUp: {fileID: 0}
+--- !u!114 &6208538251896710686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6585461070973294907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fddfe4420c9fe47f8a452ed3f43aa3dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpOptions:
+  - {fileID: 6585461070973294907}
+  - {fileID: 2861850488615480830, guid: cfb95f91530fc443f82b8aebf86af4d8, type: 3}
+  - {fileID: 5444625279099105546, guid: 5d72af9253fe14b9ca6feba0c5e9b308, type: 3}

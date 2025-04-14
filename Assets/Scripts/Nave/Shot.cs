@@ -16,7 +16,7 @@ public class Shot : MonoBehaviour
         fireAudio = gameObject.AddComponent<AudioSource>();
         fireAudio.clip = myClip; 
         fireAudio.playOnAwake = false;
-        fireAudio.volume = 1.0f;
+        fireAudio.volume = 0.25f;
     }
 
     void Update()
