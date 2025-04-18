@@ -3,8 +3,8 @@ using UnityEngine;
 public class ParticleEffect : MonoBehaviour
 {
     public ParticleSystem particlePrefab;
-    public Transform spawnPoint; // Local onde as partículas serão instanciadas
-    public float duration = 1.5f; // Duração do efeito antes de ser destruído
+    public Transform spawnPoint;
+    public float duration = 1.5f;
 
     public void PlayEffect()
     {
