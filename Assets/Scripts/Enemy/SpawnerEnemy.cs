@@ -5,8 +5,10 @@ public class SpawnerEnemy : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemys;
     [SerializeField] private float tempo = 2f;
+    [SerializeField] private int maxEnemies = 2;
 
     private Camera cam;
+    private int currentEnemyCount = 0;
 
     private void Awake()
     {
@@ -22,7 +24,10 @@ public class SpawnerEnemy : MonoBehaviour
     {
         while (true)
         {
-            CreateEnemyInstance();
+            if (currentEnemyCount < maxEnemies)
+            {
+                CreateEnemyInstance();
+            }
             yield return new WaitForSeconds(tempo);
         }
     }
@@ -34,11 +39,20 @@ public class SpawnerEnemy : MonoBehaviour
         GameObject enemyPrefab = enemys[Random.Range(0, enemys.Length)];
 
         float screenX = Random.Range(0.1f, 0.9f);
-        float screenY = 1.05f;
-        
-        Vector3 spawnPosition = cam.ViewportToWorldPoint(new Vector3(screenX, screenY, cam.nearClipPlane));
-        spawnPosition.z = 0;
+        float screenY = 1.1f; // Mais acima da tela
 
-        Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        Vector3 spawnPosition = cam.ViewportToWorldPoint(new Vector3(screenX, screenY, 10f)); // z fixo
+        spawnPosition.z = 0; // Garante que fique no plano correto
+
+        GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        currentEnemyCount++;
+        
+        enemy.GetComponent<Enemy>().OnDestroyed += HandleEnemyDestroyed;
+    }
+
+
+    private void HandleEnemyDestroyed()
+    {
+        currentEnemyCount = Mathf.Max(0, currentEnemyCount - 1);
     }
 }
