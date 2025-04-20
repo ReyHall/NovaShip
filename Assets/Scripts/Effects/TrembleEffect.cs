@@ -5,28 +5,39 @@ public class TrembleEffect : MonoBehaviour
 {
     [SerializeField] private float duration = 0.3f;
     [SerializeField] private float magnitude = 0.1f;
-    private Vector3 originalPos;
+
+    private Coroutine shakeCoroutine;
+    private Transform target;
+    private Vector3 offset = Vector3.zero;
+    
+    private void Awake()
+    {
+        target = transform;
+    }
 
     public void TriggerShake()
     {
-        StartCoroutine(Shake());
+        if (shakeCoroutine != null) StopCoroutine(shakeCoroutine);
+        shakeCoroutine = StartCoroutine(Shake());
     }
 
     private IEnumerator Shake()
     {
-        originalPos = transform.localPosition;
-        float elapsed = 0.0f;
+        float elapsed = 0f;
 
         while (elapsed < duration)
         {
-            float x = Random.Range(-1f, 1f) * magnitude;
-            float y = Random.Range(-1f, 1f) * magnitude;
+            offset.x = Random.Range(-1f, 1f) * magnitude;
+            offset.y = Random.Range(-1f, 1f) * magnitude;
 
-            transform.localPosition = originalPos + new Vector3(x, y, 0f);
-            elapsed += Time.deltaTime;
+            target.localPosition += offset;
+
             yield return null;
+
+            target.localPosition -= offset;
+            elapsed += Time.deltaTime;
         }
 
-        transform.localPosition = originalPos;
+        offset = Vector3.zero;
     }
 }
