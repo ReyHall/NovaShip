@@ -1,0 +1,57 @@
+# Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# Asset auto-generated
+Assets/AssetStoreTools*
+
+# Visual Studio / JetBrains Rider
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Unity Package Manager
+Packages/packages-lock.json
+
+# Crash reports
+sysinfo.txt
+
+# TextMesh Pro
+# (não subir arquivos gerados automaticamente)
+# Ignorar tudo dentro da pasta Assets/TextMesh Pro
+Assets/TextMesh Pro/
+
+# Exclude sensitive data
+*.p12
+*.key
+*.mobileprovision
+
+# Build artifacts
+*.apk
+*.aab
+*.ipa
+*.xcarchive
+
+# Rider specific
+.idea/
+
+# Ignore Addressables build path
+Assets/AddressableAssetsData/Android/
+Assets/AddressableAssetsData/iOS/
