@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shot : MonoBehaviour
 {
     public GameObject shotPrefab;
-    public AudioClip myClip; // Arraste o áudio aqui pelo Inspector
+    public AudioClip myClip;
     private AudioSource fireAudio;
     public float fireRate = 0.2f;
     private float nextFire = 0f;
@@ -19,28 +19,20 @@ public class Shot : MonoBehaviour
         fireAudio.volume = 0.25f;
     }
 
-    void Update()
+    public void Shoot()
     {
-        if (Input.GetKey(KeyCode.Space) && Time.time > nextFire)
+        if (Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
-            Shoot();
+            fireAudio.PlayOneShot(myClip);
+            InstantiateShot(new Vector3(-shotOffset.x, shotOffset.y, 0));
+            InstantiateShot(shotOffset);
         }
     }
-
-    private void Shoot()
-    {
-        fireAudio.PlayOneShot(myClip);
-        InstantiateShot(new Vector3(-shotOffset.x, shotOffset.y, 0));
-        InstantiateShot(shotOffset);
-    }
-
 
     private void InstantiateShot(Vector3 offset)
     {
         GameObject shot = Instantiate(shotPrefab, transform.position + offset, Quaternion.Euler(0, 0, 90));
-        fireAudio.Play();
         Destroy(shot, 1f);
     }
 }
-
