@@ -5,10 +5,12 @@ public class FlashCollision : MonoBehaviour
 {
     [SerializeField] private Color flashColor = Color.red;
     [SerializeField] private float flashDuration = 0.1f;    
-    private SpriteRenderer spriteRenderer; 
+    private SpriteRenderer spriteRenderer;
+    private Player player;
 
     private void Start()
     {
+        player = GetComponent<Player>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -19,9 +21,13 @@ public class FlashCollision : MonoBehaviour
 
     private IEnumerator FlashCoroutine()
     {
-        Color originalColor = spriteRenderer.color;
-        spriteRenderer.color = flashColor;
-        yield return new WaitForSeconds(flashDuration);
-        spriteRenderer.color = originalColor;
+        if (!player.shieldActive)
+        {
+            Color originalColor = spriteRenderer.color;
+            spriteRenderer.color = flashColor;
+            yield return new WaitForSeconds(flashDuration);
+            spriteRenderer.color = originalColor;
+        }
+
     }
 }

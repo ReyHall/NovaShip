@@ -7,6 +7,9 @@ public class PowerUp : MonoBehaviour
     [Tooltip("Lista de possíveis power-ups para troca aleatória")]
     public GameObject[] powerUpOptions;
 
+    [Tooltip("Velocidade de queda do power-up")]
+    public float fallSpeed = 2f;
+
     private SpriteRenderer spriteRenderer;
     private PowerUpType powerUpType;
 
@@ -16,13 +19,18 @@ public class PowerUp : MonoBehaviour
         powerUpType = GetComponent<PowerUpType>();
     }
 
+    private void Update()
+    {
+        // Faz o power-up cair suavemente para baixo
+        transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
+    }
+
     public void TrocarPowerUp()
     {
         if (powerUpOptions.Length <= 1 || powerUpType == null) return;
 
         string currentID = powerUpType.powerUpID;
 
-        // Cria uma lista de índices disponíveis, excluindo o índice do power-up atual
         List<int> availableIndices = new List<int>();
         for (int i = 0; i < powerUpOptions.Length; i++)
         {
@@ -34,15 +42,12 @@ public class PowerUp : MonoBehaviour
             }
         }
 
-        // Se não houver opções diferentes, não faz nada
         if (availableIndices.Count == 0) return;
 
-        // Seleciona aleatoriamente um índice da lista de disponíveis
         int randomIndex = availableIndices[Random.Range(0, availableIndices.Count)];
         GameObject newPowerUp = powerUpOptions[randomIndex];
         PowerUpType newType = newPowerUp.GetComponent<PowerUpType>();
 
-        // Atualiza o powerUpID e o sprite
         powerUpType.powerUpID = newType.powerUpID;
 
         Sprite newSprite = newPowerUp.GetComponent<SpriteRenderer>()?.sprite;

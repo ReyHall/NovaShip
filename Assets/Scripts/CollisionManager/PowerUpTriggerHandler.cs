@@ -34,6 +34,17 @@ public class PowerUpTriggerHandler : MonoBehaviour
                 Destroy(tempAudio, audioCollectionItem.length);
             }
 
+
+            if (gameObject.name.StartsWith("Shield"))
+            {
+                Debug.Log(gameObject.name);
+                Player player = collision.GetComponent<Player>();
+                if (player != null)
+                {
+                    player.ActivateShield(10f);
+                }
+            }
+
             Destroy(gameObject);
         }
         else if (collision.CompareTag("Shot"))
